@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset ="UTF-8"/>
+        <meta name  = "viewport" content = "width = device-width , initial-scale = 1.0"/>
+        <meta http-equiv = "x-UA-compatible" content = "ie=edge"/>
+        <title> geoLoca </title>
+    <head>
+     <body>
+        <img src="" id="chickenscratch"/>
+        <script>
+            
+            console.log('logged');
+            fetch('ckn.jpg').then(response => {
+                console.log('one')
+                console.log (response)
+                return response.blob();
+            })
+            .then(blob => {
+                console.log('two')
+                console.log(blob + 'thank you for working');
+                document.getElementById('chickenscratch').src = URL.createObjectURL(blob);
+            });         
+        </script>
+     </body>
+</html>
